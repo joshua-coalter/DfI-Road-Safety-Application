@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Vehicle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+    <h1>Traffic Incident System</h1>
+    <nav>
+     <a href="../index/index.html">Home</a>
+<a href="../collisions/collisions.html">Collisions</a> 
+<a href="../vehicles/vehicles.html">Vehicles</a>
+<a href="../drivers/drivers.html">Drivers</a>
+<a href="../casualties/casualties.html">Casualties</a>
+<a href="../locations/locations.html">Locations</a>
+<a href="../interventions/interventions.html">Interventions</a>
+<a href="../reports/reports.html">Reports</a>
+    </nav>    
+</div>
+
+<div class="header-right">
+       <img src="../images/twslogo.png" alt="Logo" class="logo">
+</div>
+  </header>
+
+
+    <!-- The main area holds the table, the edit form and feedback messages. -->
+    <div class="card">
+      
+      <h2>Edit Selected Record</h2>
+      <!-- This text reminds the user which vehicle is currently loaded into the form. -->
+      <p id="selectedVehicleText" class="muted">Choose a vehicle from the table first.</p>
+
+      <!-- The form is filled in automatically when the user clicks an Edit button. -->
+      <form id="editForm">
+        <div class="form-row">
+          <label for="vehicleID">Vehicle ID</label>
+          <input type="number" id="vehicleID" disabled>
+        </div>
+
+        <div class="form-row">
+          <label for="collisionID">Collision ID</label>
+        <input type="number" id="collisionID" name="collisionID" min="1" required />
+        </div>
+
+        <div class="form-row">
+          <label for="weatherCondition">Weather Condition</label>
+          <select id="vehicleType" name="vehicleType" required>
+          <option value="">Select Vehilce Type</option>
+          <option value="Car" selected>Car</option>
+          <option value="Bus">Bus</option>
+          <option value="Tractor">Tractor</option>
+          <option value="Lorry">Lorry</option>
+        </select>
+        </div>
+
+        <div class="form-row">
+          <label for="VIN">VIN</label>
+          <input
+            type="text"
+            id="VIN"
+            name="VIN"
+            maxlength="17"
+            minlength="17"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="vehicleMake">Vehicle Make</label>
+          <input
+            type="text"
+            id="vehicleMake"
+            name="vehicleMake"
+            maxlength="15"
+            required
+          />
+        </div>
+
+        <div class="form-row">
+          <label for="vehicleModel">Vehicle Model</label>
+        <input
+          type="text"
+          id="vehicleModel"
+          name="vehicleModel"
+          maxlength="15"
+          required
+        />
+        </div>
+       
+        <div class="form-row">
+          <label for="vehicleReg">Vehicle Reg</label>
+        <input
+          type="text"
+          id="vehicleReg"
+          name="vehicleReg"
+          maxlength="10"
+          required
+        />
+        </div>
+
+        <div class="form-row">
+          <label for="vehicleSpeed">Vehicle Speed</label>
+        <input type="number" id="vehicleSpeed" name="vehicleSpeed" min="1" max="999" />
+        </div>
+
+        <button type="submit">Update Record</button>
+        <!-- Messages about validation or database results appear here. -->
+      <div id="message" class="message"></div>
+      </form>
+
+      <h2>Browse and Edit Records</h2>
+      <p>The table below shows all vehicles. Click edit to load a row into the form.</p>
+      <br>
+      <hr>
+      <br>
+      <!-- JavaScript creates the table and places it here. -->
+      <div id="tableOutput"></div>
+      <br>
+      <hr>
+      <br>
+    </div>
+  </div>
+
+  <script src="editVehicles.js"></script>
+</body>
+
+</html>

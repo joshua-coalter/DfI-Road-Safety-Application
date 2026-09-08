@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Vehicle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+    <h1>Traffic Incident System</h1>
+    <nav>
+     <a href="../index/index.html">Home</a>
+<a href="../collisions/collisions.html">Collisions</a>
+<a href="../vehicles/editVehicles.html">Edit Vehicles</a>
+<a href="../drivers/drivers.html">Drivers</a>
+<a href="../casualties/casualties.html">Casualties</a>
+<a href="../locations/locations.html">Locations</a>
+<a href="../interventions/interventions.html">Interventions</a>
+<a href="../reports/reports.html">Reports</a>
+    </nav>    
+</div>
+
+<div class="header-right">
+       <img src="../images/twslogo.png" alt="Logo" class="logo">
+</div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Add Vehicle</h2>
+
+      <form id="vehicleForm">
+        <label for="collisionID">Collision ID</label>
+        <input type="number" id="collisionID" name="collisionID" min="1" required />
+
+        <label for="vehicleType">Vehicle Type</label>
+        <select id="vehicleType" name="vehicleType" required>
+          <option value="">Select Vehilce Type</option>
+          <option value="Car" selected>Car</option>
+          <option value="Bus">Bus</option>
+          <option value="Tractor">Tractor</option>
+          <option value="Lorry">Lorry</option>
+        </select>
+
+        <label for="VIN">VIN</label>
+        <input
+          type="text"
+          id="VIN"
+          name="VIN"
+          maxlength="17"
+          minlength="17"
+          required
+        />
+
+        <label for="vehicleMake">Vehicle Make</label>
+        <input
+          type="text"
+          id="vehicleMake"
+          name="vehicleMake"
+          maxlength="15"
+          required
+        />
+
+        <label for="vehicleModel">Vehicle Model</label>
+        <input
+          type="text"
+          id="vehicleModel"
+          name="vehicleModel"
+          maxlength="15"
+          required
+        />
+
+        <label for="vehicleReg">Vehicle Reg</label>
+        <input
+          type="text"
+          id="vehicleReg"
+          name="vehicleReg"
+          maxlength="10"
+          required
+        />
+
+        <label for="vehicleSpeed">Vehicle Speed</label>
+        <input type="number" id="vehicleSpeed" name="vehicleSpeed" min="1" max="999" />
+
+        <button type="submit" id="vehicleSubmitBtn">Add Vehicle</button>
+      </form>
+
+      <p id="message"></p>
+    </section>
+     <!--Viewing and Editing Location table-->
+    <section class="card">
+      <h2>Existing Vehicles</h2>
+      <div id="#output"></div>
+
+  <script src="vehicles.js"></script>
+</body>
+</html>

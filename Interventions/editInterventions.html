@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Intervention</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+    <h1>Traffic Incident System</h1>
+    <nav>
+     <a href="../index/index.html">Home</a>
+<a href="../collisions/collisions.html">Collisions</a> 
+<a href="../vehicles/vehicles.html">Vehicles</a>
+<a href="../drivers/drivers.html">Drivers</a>
+<a href="../casualties/casualties.html">Casualties</a>
+<a href="../locations/locations.html">Locations</a>
+<a href="../interventions/interventions.html">Interventions</a>
+<a href="../reports/reports.html">Reports</a>
+    </nav>    
+</div>
+
+<div class="header-right">
+       <img src="../images/twslogo.png" alt="Logo" class="logo">
+</div>
+  </header>
+
+
+    <!-- The main area holds the table, the edit form and feedback messages. -->
+    <div class="card">
+      
+      <h2>Edit Selected Record</h2>
+      <!-- This text reminds the user which intervention is currently loaded into the form. -->
+      <p id="selectedInterventionText" class="muted">Choose an intervention from the table first.</p>
+
+      <!-- The form is filled in automatically when the user clicks an Edit button. -->
+      <form id="editForm">
+        <div class="form-row">
+          <label for="intervention">Intervention ID</label>
+          <input type="number" id="interventionID" disabled>
+        </div>
+
+        <div class="form-row">
+          <label for="locationID">Location ID</label>
+          <input type="number" id="locationID">
+        </div>
+
+        <div class="form-row">
+          <label for="interventionType">Intervention Type</label>
+            <select id="interventionType" name="interventionType" required>
+                <option value="">Select type</option>
+                <option value="Junction Redesign">Junction Redesign</option>
+                <option value="Road Resurfacing">Road Resurfacing</option>
+                <option value="Pedestrian Crossing Upgrade">Pedestrian Crossing Upgrade</option>
+                <option value="Speed Reduction Systems / Bumps">Speed Reduction Systems / Bumps</option>
+                <option value="Speed Limit Reduction">Speed Limit Reduction</option>
+                <option value="Speed Camera Installation">Speed Cameras</option>
+                <option value="CCTV and Lighting Upgrade">CCTV and Lighting Upgrade</option>
+                <option value="Overtaking Ban Signage">Overtaking Ban Signage</option>
+                <option value="Road Markings">Road Markings</option>
+                <option value="Safety Barriers">Safety Barriers</option>
+                <option value="Campaigns">Campaigns</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+          <label for="implementationDate">Implementation Date</label>
+          <input type="date" id="implementationDate" name="implementationDate"/>
+        </div>
+
+        <div class="form-row">
+          <label for="description">Description</label>
+          <input type="description" id="description" name="description" required />
+        </div>
+
+        <button type="submit">Update Record</button>
+        <!-- Messages about validation or database results appear here. -->
+      <div id="message" class="message"></div>
+      </form>
+
+      <h2>Browse and Edit Records</h2>
+      <p>The table below shows all interventions. Click edit to load a row into the form.</p>
+      <br>
+      <hr>
+      <br>
+      <!-- JavaScript creates the table and places it here. -->
+      <div id="tableOutput"></div>
+      <br>
+      <hr>
+      <br>
+
+    </div>
+  </div>
+
+  <script src="editInterventions.js"></script>
+</body>
+
+</html>

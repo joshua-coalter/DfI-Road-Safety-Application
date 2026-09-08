@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Location</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+    <h1>Traffic Incident System</h1>
+    <nav>
+     <a href="../Index/index.html">Home</a>
+<a href="../collisions/collisions.html">Collisions</a>
+<a href="../vehicles/vehicles.html">Vehicles</a>
+<a href="../drivers/drivers.html">Drivers</a>
+<a href="../casualties/casualties.html">Casualties</a>
+<a href="../locations/locations.html">Locations</a>
+<a href="../interventions/interventions.html">Interventions</a>
+<a href="../Reports/reports.html">Reports</a>
+    </nav>    
+</div>
+
+<div class="header-right">
+       <img src="../images/twslogo.png" alt="Logo" class="logo">
+</div>
+  </header>
+
+
+    <!-- The main area holds the table, the edit form and feedback messages. -->
+    <div class="card">
+      
+
+      <h2>Edit Selected Record</h2>
+      <!-- This text reminds the user which driver is currently loaded into the form. -->
+      <p id="selectedDriverText" class="muted">Choose a driver from the table first.</p>
+
+      <!-- The form is filled in automatically when the user clicks an Edit button. -->
+      <form id="editForm">
+        <div class="form-row">
+          <label for="driverID">Driver ID</label>
+          <input type="number" id="driverID" disabled></input>
+        </div>
+
+        <div class="form-row">
+          <label for="vehicleID">Vehicle ID</label>
+          <input type="number" id="vehicleID">
+        </div>
+
+        <label for="gender">Gender</label>
+            <select id="gender" name="Gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male" selected>Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+         <label for="ageGroup">Age Group</label>
+            <select id="ageGroup" name="ageGroup" required>
+                <option value="">Select Age Group</option>
+                <option value="16-24">16-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-49">35-49</option>
+                <option value="50-64">50-64</option>
+                <option value="65+">65+</option>
+            </select>
+    
+            <label for="licenceType">Licence Type</label>
+                <select id="licenceType" name="licenceType" required>
+                    <option value="">Select Licence Type</option>
+                    <option value="Full">Full</option>
+                    <option value="Provisional">Provisional</option>
+                    <option value="None">None</option>
+                </select>
+
+            <label for="impairmentFlag">Impairment Flag</label>
+            <select id="impairmentFlag" name="impairmentFlag" required>
+                <option value="">Select Impairment Flag</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+
+        <button type="submit">Update Record</button>
+      </form>
+
+      <!-- Messages about validation or database results appear here. -->
+      <div id="message" class="message"></div>
+      <h2>Browse and Edit Records</h2>
+      <p>The table below shows all locations. Click edit to load a row into the form.</p>
+      <br>
+      <hr>
+      <br>
+  <!-- JavaScript creates the table and places it here. -->
+      <div id="tableOutput"></div>
+      <br>
+      <hr>
+      <br>
+    </div>
+     
+  </div>
+ 
+
+
+  <script src="editDrivers.js"></script>
+</body>
+
+</html>

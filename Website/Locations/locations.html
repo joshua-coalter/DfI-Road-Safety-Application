@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Location</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+    <h1>Traffic Incident System</h1>
+    <nav>
+     <a href="../Index/index.html">Home</a>
+<a href="../collisions/collisions.html">Collisions</a>
+<a href="../vehicles/vehicles.html">Vehicles</a>
+<a href="../drivers/drivers.html">Drivers</a>
+<a href="../casualties/casualties.html">Casualties</a>
+<a href="../locations/editLocations.html">Edit Locations</a>
+<a href="../interventions/interventions.html">Interventions</a>
+<a href="../reports/reports.html">Reports</a>
+    </nav>    
+</div>
+
+<div class="header-right">
+       <img src="../images/twslogo.png" alt="Logo" class="logo">
+</div>
+  </header>
+
+  <main>
+    <section class="card">
+        <h2>Add Location</h2>
+
+        <form id="locationForm">
+            <label for="roadName">Road Name</label>
+            <input type="text" id="roadName" name="roadName" minlength="3" required>
+
+            <label for="roadType">Road Type</label>
+            <select id="roadType" name="roadType" required>
+                <option value="">Select type</option>
+                <option value="Dual Carriageway" selected>Dual Carriageway</option>
+                <option value="A Road">A Road</option>
+                <option value="B Road">B Road</option>
+            </select>
+
+              <label for="districtName">District Name</label>
+            <select id="districtName" name="districtName" required>
+                <option value="">Select Type</option>
+                <option value="Antrim & Newtownabbey">Antrim & Newtownabbey</option>
+                <option value="Ards & North Down">Ards & North Down</option>
+                <option value="Armagh City, Banbridge & Craigavon">Armagh City, Banbridge & Craigavon</option>
+                <option value="Belfast City">Belfast City</option>
+                <option value="Causeway Coast & Glens">Causeway Coast & Glens</option>
+                <option value="Derry City & Strabane">Derry City & Strabane</option>
+                <option value="Fermanagh & Omagh">Fermanagh & Omagh</option>
+                <option value="Lisburn & Castlereagh">Lisburn & Castlereagh</option>
+                <option value="Mid & East Antrim">Mid & East Antrim</option>
+                <option value="Mid Ulster">Mid Ulster</option>
+                <option value="Newry, Mourne & Down">Newry, Mourne & Down</option>
+            </select>
+    
+            <label for="junctionType">Junction Type</label>
+            <input type="text" id="junctionType" name="junctionType">
+
+            <label for="deprivationScore">Deprivation Score</label>
+            <input type="number" id="deprivationScore" name="deprivationScore" step="0.01" min="0">
+
+            <label for="speedLimitZone">Speed Limit Zone</label>
+            <select id="speedLimitZone" name="speedLimitZone" required>
+                <option value="">Select speed</option>
+                <option value="20">20</option>
+                <option value="30" selected>30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+            </select>
+
+       <button type="submit" id="locationSubmitBtn">Add Location</button>
+      </form>
+
+      <p id="message"></p>
+    </section>
+
+    <!--Viewing and Editing Location table-->
+    <section class="card">
+      <h2>Existing Locations</h2>
+      <div id = "#output"></div>
+
+  <script src="locations.js"></script>
+</body>
+</html>

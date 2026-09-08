@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Collision</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+    <h1>Traffic Incident System</h1>
+    <nav>
+     <a href="../index/index.html">Home</a>
+<a href="../collisions/collisions.html">Collisions</a> 
+<a href="../vehicles/vehicles.html">Vehicles</a>
+<a href="../drivers/drivers.html">Drivers</a>
+<a href="../casualties/casualties.html">Casualties</a>
+<a href="../locations/locations.html">Locations</a>
+<a href="../interventions/interventions.html">Interventions</a>
+<a href="../reports/reports.html">Reports</a>
+    </nav>    
+</div>
+
+<div class="header-right">
+       <img src="../images/twslogo.png" alt="Logo" class="logo">
+</div>
+  </header>
+
+
+    <!-- The main area holds the table, the edit form and feedback messages. -->
+    <div class="card">
+      
+      <h2>Edit Selected Record</h2>
+      <!-- This text reminds the user which collision is currently loaded into the form. -->
+      <p id="selectedCollisionText" class="muted">Choose a collision from the table first.</p>
+
+      <!-- The form is filled in automatically when the user clicks an Edit button. -->
+      <form id="editForm">
+        <div class="form-row">
+          <label for="collisionID">Collision ID</label>
+          <input type="number" id="collisionID" disabled>
+        </div>
+
+        <div class="form-row">
+          <label for="locationID">Location ID</label>
+          <input type="number" id="locationID">
+        </div>
+
+        <div class="form-row">
+          <label for="dateAndTime">Date and Time</label>
+          <input type="datetime-local" id="dateAndTime">
+        </div>
+
+        <div class="form-row">
+          <label for="weatherCondition">Weather Condition</label>
+          <select id="weatherCondition" name="weatherCondition" required>
+          <option value="">Select weather</option>
+          <option value="Fine">Fine</option>
+          <option value="Raining">Raining</option>
+          <option value="Fog">Fog</option>
+          <option value="Snowing">Snowing</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="roadSurface">Road Surface</label>
+          <select id="roadSurface" name="roadSurface" required>
+          <option value="">Select surface</option>
+          <option value="Dry">Dry</option>
+          <option value="Wet">Wet</option>
+          <option value="Damp">Damp</option>
+          <option value="Icy">Icy</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="lightingCondition">Lighting Conditiion</label>
+          <select id="lightingCondition" name="lightingCondition" required>
+          <option value="">Select lighting</option>
+          <option value="Daylight">Daylight</option>
+          <option value="Dusk">Dusk</option>
+          <option value="Darkness">Darkness</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="collisionSeverity">Collision Severity</label>
+          <select id="collisionSeverity" name="collisionSeverity" required>
+          <option value="">Select severity</option>
+          <option value="Slight">Slight</option>
+          <option value="Serious">Serious</option>
+          <option value="Fatal">Fatal</option>
+          </select>
+        </div>
+       
+        <div class="form-row">
+          <label for="causationFactor">causationFactor</label>
+          <input type="text" id="causationFactor">
+        </div>
+
+        <div class="form-row">
+          <label for="notes">Notes</label>
+          <input type="text" id="notes">
+        </div>
+
+        <button type="submit">Update Record</button>
+      </form>
+
+      <h2>Browse and Edit Records</h2>
+      <p>The table below shows all collisions. Click edit to load a row into the form.</p>
+      <br>
+      <hr>
+      <br>
+      <!-- JavaScript creates the table and places it here. -->
+      <div id="tableOutput"></div>
+      <br>
+      <hr>
+      <br>
+
+      <!-- Messages about validation or database results appear here. -->
+      <div id="message" class="message"></div>
+    </div>
+  </div>
+
+  <script src="editCollisions.js"></script>
+</body>
+
+</html>

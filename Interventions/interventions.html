@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Intervention</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+    <h1>Traffic Incident System</h1>
+    <nav>
+     <a href="../index/index.html">Home</a>
+<a href="../collisions/collisions.html">Collisions</a>
+<a href="../vehicles/vehicles.html">Vehicles</a>
+<a href="../drivers/drivers.html">Drivers</a>
+<a href="../casualties/casualties.html">Casualties</a>
+<a href="../locations/locations.html">Locations</a>
+<a href="../interventions/editInterventions.html">Edit Interventions</a>
+<a href="../reports/reports.html">Reports</a>
+    </nav>    
+</div>
+
+<div class="header-right">
+       <img src="../images/twslogo.png" alt="Logo" class="logo">
+</div>
+  </header>
+
+  <main>
+    <section class="card">
+        <h2>Add Intervention</h2>
+
+        <form id="interventionForm">
+            <label for="locationID">Location ID</label>
+            <input type="number" id="locationID" name="locationID" min="1" required />
+
+            <label for="interventionType">Intervention Type</label>
+            <select id="interventionType" name="interventionType" required>
+                <option value="">Select type</option>
+                <option value="Junction Redesign">Junction Redesign</option>
+                <option value="Road Resurfacing">Road Resurfacing</option>
+                <option value="Pedestrian Crossing Upgrade">Pedestrian Crossing Upgrade</option>
+                <option value="Speed Reduction Systems / Bumps">Speed Reduction Systems / Bumps</option>
+                <option value="Speed Limit Reduction">Speed Limit Reduction</option>
+                <option value="Speed Camera Installation">Speed Cameras</option>
+                <option value="CCTV and Lighting Upgrade">CCTV and Lighting Upgrade</option>
+                <option value="Overtaking Ban Signage">Overtaking Ban Signage</option>
+                <option value="Road Markings">Road Markings</option>
+                <option value="Safety Barriers">Safety Barriers</option>
+                <option value="Campaigns">Campaigns</option>
+            </select>
+
+            <label for="implementationDate">Implementation Date</label>
+            <input type="date" id="implementationDate" name="implementationDate" required />
+
+            <label for="description">Description</label>
+            <textarea id="description" name="description" maxlength="250"></textarea>
+
+             <button type="submit" id="interventionSubmitBtn">Add Intervention</button>
+      </form>
+      <p id="message"></p>
+    </section>
+    
+    <!--Viewing Existing Interventions table-->
+    <section class="card">
+      <h2>Existing Interventions</h2>
+      <div id = "output"></div>
+
+  <script src="interventions.js"></script>
+</body>
+</html>

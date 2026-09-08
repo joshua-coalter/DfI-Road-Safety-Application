@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Casualty</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+    <h1>Traffic Incident System</h1>
+    <nav>
+     <a href="../index/index.html">Home</a>
+<a href="../collisions/collisions.html">Collisions</a>
+<a href="../vehicles/vehicles.html">Vehicles</a>
+<a href="../drivers/drivers.html">Drivers</a>
+<a href="../casualties/editCasualties.html">Edit Casualties</a>
+<a href="../locations/locations.html">Locations</a>
+<a href="../interventions/interventions.html">Interventions</a>
+<a href="../reports/reports.html">Reports</a>
+    </nav>    
+</div>
+
+<div class="header-right">
+       <img src="../images/twslogo.png" alt="Logo" class="logo">
+</div>
+  </header>
+
+  <main>
+    <section class="card">
+        <h2>Add Casualty</h2>
+
+        <form id="casualtyForm">
+            <label for="collisionID">Collision ID</label>
+            <input type="number" id="collisionID" name="CollisionID">
+
+            <label for="Gender">Gender</label>
+            <select id="Gender" name="Gender" required>
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+              <label for="ageGroup">Age Group</label>
+            <select id="ageGroup" name="ageGroup" required>
+                <option value="">Select Age Group</option>
+                <option value="Under 16">Under 16</option>
+                <option value="16-24">16-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-49">35-49</option>
+                <option value="50-64">50-64</option>
+                <option value="65+">65+</option>
+            </select>
+    
+            <label for="injurySeverity">Injury Severity</label>
+            <select id="injurySeverity" name="injurySeverity" required>
+              <option value="">Severity Level</option>
+              <option value="Serious">Serious</option>
+              <option value="Slight">Slight</option>
+              <option value="Fatal">Fatal</option>
+            </select>
+
+            <label for="casualtyType">Casualty Type</label>
+            <select id="casualtyType" name="casualtyType" required>
+                <option value="">Select Type</option>
+                <option value="Driver">Driver</option>
+                <option value="Passenger">Passenger</option>
+                <option value="Pedestrian">Pedestrian</option>
+                <option value="Cyclist">Cyclist</option>
+            </select>
+
+       <button type="submit" id="casualtySubmitBtn">Add Casualty</button>
+      </form>
+
+      <p id="message"></p>
+    </section>
+
+    <!--Viewing and Editing Casualty table-->
+    <section class="card">
+      <h2>Existing Casualties</h2>
+      <div id = "#output"></div>
+
+  <script src="casualties.js"></script>
+</body>
+</html>

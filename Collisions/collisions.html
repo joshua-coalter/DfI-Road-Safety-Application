@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Collision</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="header-left">
+    <h1>Traffic Incident System</h1>
+    <nav>
+     <a href="../index/index.html">Home</a>
+<a href="../collisions/editCollisions.html">Edit Collisions</a>
+<a href="../vehicles/vehicles.html">Vehicles</a>
+<a href="../drivers/drivers.html">Drivers</a>
+<a href="../casualties/casualties.html">Casualties</a>
+<a href="../locations/locations.html">Locations</a>
+<a href="../interventions/interventions.html">Interventions</a>
+<a href="../reports/reports.html">Reports</a>
+    </nav>    
+</div>
+
+<div class="header-right">
+       <img src="../images/twslogo.png" alt="Logo" class="logo">
+</div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Add Collision</h2>
+
+      <form id="collisionForm">
+        <label for="locationID">Location ID</label>
+        <input type="number" id="locationID" name="locationID" min="1" required />
+
+        <label for="dateAndTime">Date and Time</label>
+        <input type="datetime-local" id="dateAndTime" name="dateAndTime" required />
+
+        <label for="weatherCondition">Weather Condition</label>
+        <select id="weatherCondition" name="weatherCondition" required>
+          <option value="">Select weather</option>
+          <option value="Fine">Fine</option>
+          <option value="Raining">Rain</option>
+          <option value="Fog">Fog</option>
+          <option value="Snowing">Snow</option>
+        </select>
+
+        <label for="roadSurface">Road Surface</label>
+        <select id="roadSurface" name="roadSurface" required>
+          <option value="">Select surface</option>
+          <option value="Dry">Dry</option>
+          <option value="Wet">Wet</option>
+          <option value="Damp">Damp</option>
+          <option value="Icy">Icy</option>
+        </select>
+
+        <label for="lightingCondition">Lighting Condition</label>
+        <select id="lightingCondition" name="lightingCondition" required>
+          <option value="">Select lighting</option>
+          <option value="Daylight">Daylight</option>
+          <option value="Dusk">Dusk</option>
+          <option value="Darkness">Darkness</option>
+        </select>
+
+        <label for="collisionSeverity">Collision Severity</label>
+        <select id="collisionSeverity" name="collisionSeverity" required>
+          <option value="">Select severity</option>
+          <option value="Slight">Slight</option>
+          <option value="Serious">Serious</option>
+          <option value="Fatal">Fatal</option>
+        </select>
+
+        <label for="causationFactor">Causation Factor</label>
+        <input
+          type="text"
+          id="causationFactor"
+          name="causationFactor"
+          maxlength="50"
+          minlength="4"
+          required
+        />
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" maxlength="250"></textarea>
+
+        <button type="submit" id="collisionsSubmitBtn">Add Collision</button>
+      </form>
+
+      <p id="message"></p>
+    </section>
+
+    <!--Viewing Existing Collisions table-->
+    <section class="card">
+      <h2>Existing Collisions</h2>
+      <div id = "output"></div>
+
+  <script src="collisions.js"></script>
+</body>
+</html>

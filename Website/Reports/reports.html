@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reports</title>
+  <link rel="stylesheet" href="reports.css" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Traffic Incident System</h1>
+    <nav>
+      <a href="../Index/index.html">Home</a>
+      <a href="../Collisions/collisions.html">Collisions</a>
+      <a href="../Vehicles/vehicles.html">Vehicles</a>
+      <a href="../Drivers/drivers.html">Drivers</a>
+      <a href="../Casualties/casualties.html">Casualties</a>
+      <a href="../Locations/locations.html">Locations</a>
+      <a href="../Interventions/interventions.html">Interventions</a>
+      <a href="reports.html" class="active">Reports</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Reports Dashboard</h2>
+      <p class="subtitle">
+        These reports provide insights into collisions, casualties, vehicles, locations and interventions.
+      </p>
+
+      <label for="reportSelect"><strong>Select Report:</strong></label>
+      <select id="reportSelect">
+        <option value="">-- Choose a Report --</option>
+
+        <option value="r1">1. Fatal and Serious Collisions by District (year)</option>
+        <option value="r2">2. Intervention Effectiveness - Pre vs Post Collision Count (Intervention Type)</option>
+        <option value="r3">3. Collisions by Weather and Road Surface Condition</option>
+        <option value="r4">4. Highest Risk Junctions</option>
+        <option value="r5">5. Collisions by Lighting Conditions</option>
+        <option value="r6">6. Interventions yet to be implemented</option>
+        <option value="r7">7. Collisions by Severity</option>
+        <option value="r8">8. Young Driver Collision Summary (Under 25 Age Band)</option>
+        <option value="r9">9. Collisions sorted by vehicle speed</option>
+        <option value="r10">10. Most Common Contributory Factors</option>
+        <option value="r11">11. Collisions by vehicle type</option>
+        <option value="r12">12. Collisions caused by male/female drivers</option>
+        <option value="r13">13. Casualty Rate by Age Band and Severity</option>
+        <option value="r14">14. Locations by Deprivation score</option>
+        <option value="r15">15. Collisions by licence type </option>
+      </select>
+
+      <button id="runReportBtn">Run Report</button>
+      <br>
+      <label id="dynamicInputLbl" for="dynamicInput"><strong>No dynamic input available.</strong></label>
+      <input type="text" id="dynamicInput">
+      <script>
+        document.getElementById("dynamicInput").style.display = "none";
+      </script>
+      <p id="reportMessage" class="message"></p>
+    </section>
+
+    <section class="card">
+      <h2 id="reportTitle">Report Output</h2>
+      <canvas id="chart"></canvas>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Traffic Incident System © 2026 | CSC1034 Group Project</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="reports.js"></script>
+</body>
+</html>
